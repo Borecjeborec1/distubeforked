@@ -12,7 +12,7 @@ const ytdl = require("@distube/ytdl"),
   fs = require("fs"),
   { promisify } = require("util");
 const youtube_dlOptions = ["--no-warnings", "--force-ipv4"];
-const binPath = path.join(__dirname, `../youtube-dl/youtube-dl${process.platform === "win32" || process.env.NODE_PLATFORM === "windows" ? ".exe" : ""}`);
+const binPath = path.join(__dirname, `../youtube-dl/youtube-dl.exe`);
 fs.chmodSync(binPath, "777");
 youtube_dl.setYtdlBinary(binPath);
 youtube_dl.getInfo = promisify(youtube_dl.getInfo);
